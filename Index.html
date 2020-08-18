@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+    <script>
+
+let computerScore = 0; //starting scoreboard
+let playerScore = 0;
+let draws = 0;
+
+function computerPlay() { //function which decides what move the computer makes
+    let computerChoice = Math.random(); //returns a number between 0 and 1
+    if (computerChoice <= 0.33) {
+        return "rock"
+    }
+    else if (computerChoice > 0.33 && <= 0.66) {
+        return "paper"
+    }
+    else (computerChoice > 0.66) {
+        return "scissors"
+    }
+}
+
+function playRound(playerSelection, computerSelection) { //function which plays a round
+    let playerSelection = (prompt('Rock, Paper or Scissors?')); // asks player what they'd like to play
+if (computerSelection === "rock" && playerSelection.toLowerCase() === "paper") {
+    return 'You Win! Paper beats Rock'
+    } 
+else if (computerSelection === "paper" && playerSelection.toLowerCase() === "scissors") {
+    return 'You Win! Scissors beats Paper'
+    }
+else if (computerSelection === "scissors" && playerSelection.toLowerCase() === "rock") {
+    return 'You win! Rock beats Scissors'
+    }
+else if (computerSelection === "paper" && playerSelection.toLowerCase() === "rock") {
+    return 'You Lose! Paper beats Rock'
+    }
+else if (computerSelection === "scissors" && playerSelection.toLowerCase() === "paper") {
+    return 'You Lose! Scissors beats Paper'
+    } 
+else if (computerSelection === "rock" && playerSelection.toLowerCase() === "scissors") {
+    return 'You Lose! Rock beats Scissors'
+    }
+else (computerSelection === playerSelection.toLowerCase()) {
+    return 'You tie!'
+    }
+}
+
+function gameScore() { // function which increases the score based on who wins the round
+if (computerSelection === "rock" && playerSelection.toLowerCase() === "paper") {
+    playerScore++
+        console.log("Your score is " + playerScore);
+        console.log("The computer's score is " + computerScore);
+    } 
+else if (computerSelection === "paper" && playerSelection.toLowerCase() === "scissors") {
+    playerScore++
+        console.log("Your score is " + playerScore);
+        console.log("The computer's score is " + computerScore);
+    }
+else if (computerSelection === "scissors" && playerSelection.toLowerCase() === "rock") {
+    playerScore++
+        console.log("Your score is " + playerScore);
+        console.log("The computer's score is " + computerScore);
+    }
+else if (computerSelection === "paper" && playerSelection.toLowerCase() === "rock") {
+    computerScore++
+        console.log("Your score is " + playerScore);
+        console.log("The computer's score is " + computerScore);
+    }
+else if (computerSelection === "scissors" && playerSelection.toLowerCase() === "paper") {
+    computerScore++
+        console.log("Your score is " + playerScore);
+        console.log("The computer's score is " + computerScore);
+    } 
+else if (computerSelection === "rock" && playerSelection.toLowerCase() === "scissors") {
+    computerScore++
+        console.log("Your score is " + playerScore);
+        console.log("The computer's score is " + computerScore);
+    }
+else (computerSelection === playerSelection.toLowerCase()) {
+    draws++
+        console.log("Your score is " + playerScore);
+        console.log("The computer's score is " + computerScore);
+    }
+}
+
+function game() {  //call playRound function five times in a row
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(playRound(playerSelection, computerSelection));
+}
+
+let playerWin = "Congratulations! You are the winner!"
+let computerWin = "You lose. Better luck next time!"
+
+if (playerScore > computerScore) {
+    console.log(playerWin);
+  }
+
+if (playerScore < computerScore) {
+    console.log(computerWin);
+  }
+
+</script>
